@@ -1,0 +1,250 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+:root {
+  --text-color: #333;
+  --icon-color: #ACACBE;
+  --icon-hover-bg: #5b5e71;
+  --placeholder-color: #dcdcdc;
+  --outgoing-chat-bg: #007bff;
+  --incoming-chat-bg: #f7f7f8;
+  --outgoing-chat-border: #007bff;
+  --incoming-chat-border: #D9D9E3;
+}
+
+.question{
+height: 100vh;
+background-color: #E5EAF2;
+}
+/* .chat-container{
+  margin-top: 10px;
+} */
+/* Chats container styling */
+
+
+.chat-box {
+  overflow-y: auto;
+  height: 83.5vh;
+  background-color: #fffefe;
+  border-radius: 10px;
+  width: 50%;
+  margin: 0 auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+/* .chat-box {
+  overflow-y: auto;
+  height: 83.5vh;
+  border-radius: 15px;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: auto;
+  color: rgba(17, 24, 39, 1);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+} */
+
+/* Scrollbar styles */
+:where(.chat-box, textarea)::-webkit-scrollbar {
+  width: 6px;
+}
+
+:where(.chat-box, textarea)::-webkit-scrollbar-track {
+  background: var(--incoming-chat-bg);
+  border-radius: 25px;
+}
+
+:where(.chat-box, textarea)::-webkit-scrollbar-thumb {
+  background: var(--icon-color);
+  border-radius: 25px;
+}
+
+/* .ai_chat_logo {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+} */
+
+/* Chat styles */
+.all-messages {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-top: 10px;
+}
+
+.user-message{
+  background-color: #007bff;
+  color: #fff;
+  word-wrap: break-word;
+  min-width: 60px;
+  max-width: 700px;
+  padding: 14px 18px;
+  margin: 6px 8px;
+  border-radius: 16px 16px 0 16px;
+  align-self: flex-end;
+}
+
+.message {
+  padding: 15px;
+  margin: 10px;
+  word-wrap: break-word;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.ai-message {
+  background-color: #f2f2f2;
+  color: #333;
+  word-wrap: break-word;
+  min-width: 60px;
+  max-width: 700px;
+  padding: 14px 18px;
+  margin: 6px 8px;
+  border-radius: 16px 16px 16px 0;
+  align-self: flex-start; /* Align AI messages to the left */
+}
+
+
+.ai-container {
+  display: flex; 
+  align-items: center; /* Center vertically */
+  margin-bottom: 10px; 
+}
+
+.ai-container img {
+  margin-right: 1px;
+}
+
+.chat-welcome {
+  display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    background-color: #3c3c3c;
+    border-bottom: 3px solid #56E3B8;
+}
+/* Typing container styling */
+.input-form {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  /* background-color: var(--incoming-chat-bg); */
+  background-color: #E5EAF2;
+  padding: 20px 10px;
+  border-top: 1px solid var(--incoming-chat-border);
+  border-radius: 10px 10px 0 0;
+}
+
+.text-container {
+  width: 100%;
+  display: flex;
+  position: relative;
+  max-width: 950px;
+  align-items: flex-end;
+}
+
+.input-bar {
+  resize: none;
+  height: 55px;
+  width: 100%;
+  border: none;
+  padding: 15px 45px 15px 20px;
+  color: var(--text-color);
+  font-size: 1rem;
+  border-radius: 4px;
+  max-height: 250px;
+  overflow-y: auto;
+  background: var(--incoming-chat-bg);
+  outline: 1px solid var(--incoming-chat-border);
+  margin-right: 10px;
+}
+/* Focus styles */
+.input-bar:focus {
+  border-color: #007bff; /* Change to your desired focus color */
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Add a subtle box-shadow on focus */
+}
+
+.send-button {
+  width: 55px;
+  height: 55px;
+  display: flex;
+  border-radius: 4px;
+  font-size: 1.35rem;
+  align-items: center;
+  justify-content: center;
+  color: var(--icon-color);
+  background: var(--incoming-chat-bg);
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+  border-style: none;
+  border: 1px solid;
+}
+
+.send-button:hover {
+  background-color: var(--icon-hover-bg);
+}
+
+.loader-container{
+  width: 80%;
+}
+
+
+@keyframes moveToRight {
+  from {
+    left: 0;
+  }
+  to {
+    left: 100%;
+  }
+}
+
+.progress-outer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.progress-info {
+  width: 4%;
+  padding-left: 5px;
+}
+
+.progress {
+  width: 96%;
+  background: #eee;
+  min-height: 1px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 3px;
+}
+
+.progress.progress--large {
+  height: 10px;
+}
+.progress-bar {
+  background: lime;
+  height: 100%;
+  position: absolute;
+  left: 0;
+}
+.progress.progress--loading .progress-bar {
+  width: 30%;
+  animation: moveToRight 1s infinite linear;
+  border-radius: 3%;
+}
